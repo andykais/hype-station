@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Routes } from './router'
-
-const App = () => <Routes />
+import { App } from './app'
+import './index.css'
 
 ReactDOM.render(<App />, document.getElementById('app'))

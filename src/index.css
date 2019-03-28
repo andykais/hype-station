@@ -1,0 +1,27 @@
+html,
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+:root {
+  --primary: red;
+  --secondary: green;
+  --grey: darkgrey;
+  --grey-light: lightgrey;
+  --grey-dark: darkslategrey;
+}

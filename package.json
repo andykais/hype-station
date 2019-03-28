@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "develop": "webpack-dev-server --open",
+    "clean": "rm -rf dist",
+    "compile": "webpack --mode=production",
+    "build": "run-s clean compile",
+    "develop": "webpack-dev-server --mode=development --open",
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "typecheck:watch": "npm run typecheck -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall:react-cache": "git clone git@github.com:facebook/react.git --depth=1 && cd react && yarn install --frozen-lockfile && npm run build react-cache && cd .. && npm i $(npm pack ./react/build/node_modules/react-cache) && rm -rf react react-cache-*.tgz",
+    "postinstall": "npm run postinstall:react-cache"
   },
   "repository": {
     "type": "git",
@@ -26,22 +30,34 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/luxon": "^1.11.1",
+    "@types/node-fetch": "^2.1.7",
+    "@types/react": "^16.8.10",
     "@types/react-cache": "^2.0.1",
+    "@types/react-css-modules": "^4.6.2",
     "@types/react-dom": "^16.8.3",
+    "@types/react-router-dom": "^4.3.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-react-css-modules": "^5.2.3",
     "clean-terminal-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
-    "node-fetch": "^2.3.0",
-    "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "npm-run-all": "^4.1.5",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
     "typescript": "^3.3.4000",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "luxon": "^1.12.0",
+    "node-fetch": "^2.3.0",
     "react": "^16.6.3",
-    "react-cache": "^2.0.0-alpha.1"
+    "react-cache": "file:react-cache-2.0.0-alpha.0.tgz",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.0",
+    "react-router-dom": "^5.0.0"
   }
 }

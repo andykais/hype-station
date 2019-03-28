@@ -1,0 +1,33 @@
+.creator-list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+}
+
+.last-updated {
+  color: var(--grey);
+}
+.last-updated > .datetime {
+  color: var(--grey-dark);
+}
+
+.avatar-img,
+.avatar-img-backup {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.avatar-img-backup {
+  background: var(--grey-light);
+}
+
+.creator-item {
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+}
