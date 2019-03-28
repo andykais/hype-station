@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "jsx": "react"
+  },
+  "include": ["./src/**/*.tsx"]
+}
